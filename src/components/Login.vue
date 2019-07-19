@@ -16,6 +16,7 @@
           type="password">
         </el-input>
         <el-button type="primary" @click="login">登录</el-button>
+      <el-button type="primary" @click="signup">注册</el-button>
       </el-row>
     </el-col>
   </el-row>
@@ -38,6 +39,9 @@ export default {
           console.log(data)
         })
           // this.$router.push('/todolist')
+      },
+      signup(){
+
       }
   },
 };
