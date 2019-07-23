@@ -16,7 +16,7 @@
           type="password">
         </el-input>
         <el-button type="primary" @click="login">登录</el-button>
-      <el-button type="primary" @click="signup">注册</el-button>
+        <el-button type="primary" @click="signup">注册</el-button>
       </el-row>
     </el-col>
   </el-row>
@@ -47,14 +47,10 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-  .el-row.content
-    padding 16px
-  .title
-    font-size 28px
-  .el-input
-    margin 12px 0
-  .el-button
-    width 100%
-    margin-top 12px    
+<style lang="scss" scoped>
+  .content{
+    .el-input{
+      margin:0 0 20px 0;
+    }
+  }
 </style>
