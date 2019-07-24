@@ -1,9 +1,5 @@
 const userModule = require('../utils/query')
 
-
-console.log(1111)
-
-
 exports.getSignup = async ctx => {
     ctx.body = {
         code: 400,
@@ -12,12 +8,12 @@ exports.getSignup = async ctx => {
 }
 
 exports.postSignup = async(ctx) => {
-    let { name, password, repeatpass } = ctx.request.body
-
+    let { name, password, repeatpass, label, age, emial } = ctx.request.body
+    console.log(ctx.request.body)
     await userModule.findDataByName(name).then(result => {
-        console.log(result)
 
-        if (result.length > 1) {
+
+        if (result.length > 0) {
             //用户已经存在
             ctx.body = {
                 code: 500,
@@ -29,7 +25,7 @@ exports.postSignup = async(ctx) => {
                 message: '两次输入密码不一致'
             }
         } else {
-            userModule.insertData([name, password, (new Date()).getTime()]).then(res => {
+            userModule.insertData([name, password, (new Date()).getTime(), label, age, emial]).then(res => {
                 console.log('注册成功', res)
                     //注册成功
                 ctx.body = {

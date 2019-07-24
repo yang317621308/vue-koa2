@@ -41,7 +41,7 @@ export default {
           // this.$router.push('/todolist')
       },
       signup(){
-
+        this.$router.push({'name':"sigup"})
       }
   },
 };

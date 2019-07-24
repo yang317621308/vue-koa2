@@ -29,7 +29,12 @@ let users = `create table if not exists users(
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     pass VARCHAR(100) NOT NULL,
+    age VARCHAR(100),
+    label VARCHAR(100),
+    emial VARCHAR(100),
     moment VARCHAR(100) NOT NULL,
+    constraint driver_name
+    Unique (name),
     PRIMARY KEY ( id )
    );`
 
@@ -69,7 +74,8 @@ createTable(comment)
 
 // 注册用户
 let insertData = function(value) {
-        let _sql = "insert into users set name=?,pass=?,moment=?;"
+        console.log(value, 'value')
+        let _sql = "insert into users set name=?,pass=?,moment=?,label=?,age=?,emial=?;"
         return query(_sql, value)
     }
     // 删除用户

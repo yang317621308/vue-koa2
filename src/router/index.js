@@ -7,18 +7,17 @@ Vue.use(Router)
 
 export default new Router({
     routes: [{
-            path: '/',
-            name: 'HelloWorld',
+            path: '/login',
+            name: 'login',
             component: Login
         },
         {
             path: '*',
-            redirect: '/' // 输入其他不存在的地址自动跳回首页
-        },
-        {
+            redirect: '/login'
+        }, {
             path: '/sigup',
             component: sigup,
-            redirect: '/' // 输入其他不存在的地址自动跳回首页
+            name: 'sigup',
         }
     ]
 })

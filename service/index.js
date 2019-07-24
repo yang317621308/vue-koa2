@@ -6,6 +6,6 @@ let app = new Koa()
 
 app.use(bodyParser())
 
-app.use(require('./routes/siginup.js').routes())
+app.use(require('./routes/routes').routes())
 
 app.listen(3000)
