@@ -5,6 +5,15 @@
       <el-form-item label="用户名">
         <el-input v-model="signupForm.name"></el-input>
       </el-form-item>
+       <el-form-item label="名称">
+        <el-input v-model="signupForm.label"></el-input>
+      </el-form-item>
+      <el-form-item label="年龄">
+        <el-input v-model="signupForm.age" ></el-input>
+      </el-form-item>
+      <el-form-item label="邮箱">
+        <el-input v-model="signupForm.emial" ></el-input>
+      </el-form-item>
       <el-form-item label="密码">
         <el-input v-model="signupForm.password" show-password></el-input>
       </el-form-item>
@@ -21,19 +30,27 @@
   </div>
 </template>
 <script>
+import UserService from '../api/components/user'
 export default {
   data() {
     return {
       signupForm: {
-        name: "",
-        password: "",
-        repeatpass: ""
+        name: "123",
+        password: "123",
+        repeatpass: "123",
+        emial:"123",
+        age:"123",
+        label:"123"
       }
     };
   },
   methods: {
       signup(){
-        
+        UserService.sigup(this.signupForm).then(data=>{
+               console.log(data)
+        }).catch(err=>{
+          console.log(err)
+        })
       },
       back(){
         this.$router.push({name:'login'})

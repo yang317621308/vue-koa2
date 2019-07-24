@@ -5,7 +5,7 @@ class UserService {
     static login(userInfo) {
         return new Promise((resolve, reject) => {
             BaseService({
-                baseuRL: 'api/user/login',
+                baseURL: 'api/user/login',
                 method: 'post',
                 data: userInfo
             }).then(Response => {
@@ -20,7 +20,7 @@ class UserService {
     static sigup(userInfo) {
         return new Promise((resolve, reject) => {
             BaseService({
-                baseuRL: 'api/user/sigup',
+                baseURL: 'api/user/signup',
                 method: 'post',
                 data: userInfo
             }).then(Response => {
